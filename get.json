@@ -1,0 +1,54 @@
+{
+    "stack_name": "flask-stack",
+    "template": {
+        "AWSTemplateFormatVersion": "2010-09-09",
+        "Description": "Import existing VPC, Subnet, IGW, Route Table, Routes and Association",
+        "Resources": {
+            "MyInternetGateway": {
+                "DeletionPolicy": "Retain",
+                "Properties": {},
+                "Type": "AWS::EC2::InternetGateway"
+            },
+            "MyPublicRoute": {
+                "DeletionPolicy": "Retain",
+                "Properties": {
+                    "DestinationCidrBlock": "0.0.0.0/0",
+                    "GatewayId": "igw-0f58f70c27122313a",
+                    "RouteTableId": "rtb-0d96892830424e848"
+                },
+                "Type": "AWS::EC2::Route"
+            },
+            "MyRouteTable": {
+                "DeletionPolicy": "Retain",
+                "Properties": {
+                    "VpcId": "vpc-0342cf86f01583ce6"
+                },
+                "Type": "AWS::EC2::RouteTable"
+            },
+            "MySubnet": {
+                "DeletionPolicy": "Retain",
+                "Properties": {
+                    "AvailabilityZone": "us-east-1a",
+                    "CidrBlock": "10.0.0.0/28",
+                    "VpcId": "vpc-0342cf86f01583ce6"
+                },
+                "Type": "AWS::EC2::Subnet"
+            },
+            "MySubnetRouteTableAssociation": {
+                "DeletionPolicy": "Retain",
+                "Properties": {
+                    "RouteTableId": "rtb-0d96892830424e848",
+                    "SubnetId": "subnet-0e502f02bb78d2994"
+                },
+                "Type": "AWS::EC2::SubnetRouteTableAssociation"
+            },
+            "MyVPC": {
+                "DeletionPolicy": "Retain",
+                "Properties": {
+                    "CidrBlock": "10.0.0.0/24"
+                },
+                "Type": "AWS::EC2::VPC"
+            }
+        }
+    }
+}

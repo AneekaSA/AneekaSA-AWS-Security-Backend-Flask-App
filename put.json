@@ -1,0 +1,45 @@
+{
+    "message": "Subnet converted to private",
+    "updated_template": {
+        "AWSTemplateFormatVersion": "2010-09-09",
+        "Description": "Import existing VPC, Subnet, IGW, Route Table, Routes and Association",
+        "Resources": {
+            "MyInternetGateway": {
+                "DeletionPolicy": "Retain",
+                "Properties": {},
+                "Type": "AWS::EC2::InternetGateway"
+            },
+            "MyRouteTable": {
+                "DeletionPolicy": "Retain",
+                "Properties": {
+                    "VpcId": "vpc-0342cf86f01583ce6"
+                },
+                "Type": "AWS::EC2::RouteTable"
+            },
+            "MySubnet": {
+                "DeletionPolicy": "Retain",
+                "Properties": {
+                    "AvailabilityZone": "us-east-1a",
+                    "CidrBlock": "10.0.0.0/28",
+                    "VpcId": "vpc-0342cf86f01583ce6"
+                },
+                "Type": "AWS::EC2::Subnet"
+            },
+            "MySubnetRouteTableAssociation": {
+                "DeletionPolicy": "Retain",
+                "Properties": {
+                    "RouteTableId": "rtb-0d96892830424e848",
+                    "SubnetId": "subnet-0e502f02bb78d2994"
+                },
+                "Type": "AWS::EC2::SubnetRouteTableAssociation"
+            },
+            "MyVPC": {
+                "DeletionPolicy": "Retain",
+                "Properties": {
+                    "CidrBlock": "10.0.0.0/24"
+                },
+                "Type": "AWS::EC2::VPC"
+            }
+        }
+    }
+}

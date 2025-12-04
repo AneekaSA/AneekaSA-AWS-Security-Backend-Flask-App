@@ -1,0 +1,72 @@
+# ---- Python ----
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.swp
+
+# Virtual environment
+venv/
+env/
+.venv/
+
+# Byte-compiled / optimized files
+*.py[cod]
+*$py.class
+
+# ---- Flask ----
+instance/
+.flaskenv
+.env
+*.log
+
+# ---- AWS ----
+.aws/
+*.pem
+*.key
+
+# ---- Configuration ----
+config.json
+template.yaml
+
+# ---- Cache ----
+.cache/
+*.tmp
+*.temp
+
+# ---- OS Specific ----
+.DS_Store
+.AppleDouble
+Thumbs.db
+desktop.ini
+
+# ---- IDE / Editors ----
+.vscode/
+.code-workspace
+.idea/
+
+# ---- Logs ----
+logs/
+*.log
+
+# ---- Testing ----
+pytest_cache/
+coverage.xml
+
+# ---- Build Artifacts ----
+dist/
+build/
+
+# ---- Python Packaging ----
+*.egg
+*.egg-info/
+.eggs/
+MANIFEST
+
+# ---- Misc ----
+notes.txt
+
+postman/
+screenshots/
+*.png
+*.jpg

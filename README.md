@@ -136,6 +136,9 @@ GET /template/flask-app
 }
 ```
 Screenshot:  
+![ALT TEXT](screenshots/get-api.png)
+
+
 
 ---
 

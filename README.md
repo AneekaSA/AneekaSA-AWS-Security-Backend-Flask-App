@@ -27,7 +27,7 @@ The Flask API communicates with AWS CloudFormation via boto3, and all API calls 
 
 ### Pre-Requisites
 - AWS Cloud infrastructure setup:
-  - VPC (flask-app-vpc)
+  - VPC 
   - Public Subnet
   - Route Table
   - Internet Gateway  
@@ -40,6 +40,8 @@ The Flask API communicates with AWS CloudFormation via boto3, and all API calls 
 ### **1. Create AWS Resources**
 Create/import the AWS resources into a CloudFormation stack (`flask-stack`).  
 Save the generated template as **template.yaml**.
+
+![get-api](screenshots/import-resources.png)
 
 ---
 
@@ -344,7 +346,10 @@ POST /changeset
 Screenshot:
 ![get-api](screenshots/post-api.png)
 
-```
+Hence, the subnet is successfully converted from Public to Private and the Changeset is obtained. Together, these workflows showcase practical cloud automation, infrastructure analysis, secure working API integration and controlled change management through API-driven operations.
+
+![get-api](screenshots/changeset-create.png)
+![get-api](screenshots/changeset.png)
 
 ---
 

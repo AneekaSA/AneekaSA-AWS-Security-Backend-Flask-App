@@ -265,7 +265,8 @@ PUT /template/convert
   }
 }
 ```
-
+Screenshot:
+![get-api](screenshots/put-api.png)
 ---
 
 ## **6. POST API – Create CloudFormation ChangeSet**
@@ -340,6 +341,8 @@ POST /changeset
   "status_reason": "OK"
 }
 ```
+Screenshot:
+![get-api](screenshots/post-api.png)
 
 ```
 

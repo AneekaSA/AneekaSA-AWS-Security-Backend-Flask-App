@@ -31,6 +31,14 @@ All API operations communicate with AWS via boto3 and are validated using Postma
   - Route Table
   - Internet Gateway  
 - AWS CLI configured on local machine
+---
+
+### Postman usage
+
+GET /template/<stack-name> — send request with stack name to get the o/p.  
+Copy the JSON result and paste into the body of the PUT  request (raw JSON).  
+Use the modified_template returned in the template field for the POST /changeset call.  
+
 
 ---
 

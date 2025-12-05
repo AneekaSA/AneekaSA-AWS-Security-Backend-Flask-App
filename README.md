@@ -71,6 +71,7 @@ Server starts at:
 The GET API fetches the CloudFormation stack template and returns it as JSON (YAML → JSON conversion via Boto3 + Python).  
 The conversion is done by loading the YAML string into a Python dictionary, and Flask returns it as proper JSON in the response.
 
+
 ### **Request**
 
 Postman GET Request:

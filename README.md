@@ -277,7 +277,7 @@ Once the ChangeSet is finished, the API returns the ChangeSet ID, its final stat
 
 ### **Request**
 
-Postman POST Reaquest:
+Postman POST Request:
 ```bash
 POST /changeset
 ```

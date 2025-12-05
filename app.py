@@ -12,6 +12,7 @@ ec2 = boto3.client("ec2")
 
 @app.get("/template/<stack_name>")
 def get_template(stack_name):
+    """Retrieves a CloudFormation stack template and converts it to JSON."""
     try:
         response = cf.get_template(StackName=stack_name)
         yaml_template = response["TemplateBody"]
@@ -28,6 +29,7 @@ def get_template(stack_name):
 
 @app.put("/template/modify")
 def update_subnet_to_private():
+    """Parses the template to remove Internet Gateway routes, converting public subnets to private."""
     try:
         template = request.json["template"]
         resources = template.get("Resources", {})
@@ -56,6 +58,7 @@ def update_subnet_to_private():
 
 @app.post("/changeset")
 def create_changeset():
+    """Creates a CloudFormation ChangeSet with the provided template and waits for completion."""
     try:
         data = request.json
         stack_name = data["stack_name"]

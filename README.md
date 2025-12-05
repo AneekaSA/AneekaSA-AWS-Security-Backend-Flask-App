@@ -5,11 +5,9 @@
 ### Project Overview
 This project is a backend application built using Python, Flask, and Boto3 to interact with AWS CloudFormation and VPC networking resources. It showcases automation of AWS infrastructure management through REST APIs, including retrieval and transformation of CloudFormation templates and controlled update workflows using ChangeSets. The key functionalities are:
 
-GET: Retrieve the CloudFormation template (YAML → JSON conversion)
-
-PUT: Convert a public subnet into a private one by removing the IGW route
-
-POST: Create and monitor a CloudFormation ChangeSet using the modified template
+**GET:** Retrieve the CloudFormation template (YAML → JSON conversion)
+**PUT**: Convert a public subnet into a private one by removing the IGW route
+**POST**: Create and monitor a CloudFormation ChangeSet using the modified template
 
 All API operations communicate with AWS via boto3 and are validated using Postman.
 
